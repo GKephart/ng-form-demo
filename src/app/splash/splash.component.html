@@ -1,0 +1,23 @@
+<main class="container">
+	<table class="table table-bordered table-responsive">
+		<tr>
+			<th>User Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+      <th>Username</th>
+      <th>Website</th>  
+		</tr>
+		<tr (click)="getDetailedView(user)" *ngFor="let user of users">
+			<td>{{user.userId}}</td>
+			<td>{{user.name}}</td>
+			<td><a [href]="'mailto:' + user.email">{{user.email}}</a></td>
+			<td>{{user.phone}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.website}}</td> 
+		</tr>
+	</table>
+  <!--https://stackoverflow.com/questions/45749533/what-is-input-used-for-->
+ </main>
+
+<create-profile-form [users] = "users"> </create-profile-form>

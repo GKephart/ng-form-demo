@@ -1,0 +1,63 @@
+  <div class="container">
+      <form name="createUserForm" class="form-horizontal well" [formGroup]="createUserForm" (submit)="createProfile()" novalidate>
+
+  	<h2>Create User</h2>
+		<div class="form-group">
+			<label for="name">Name</label>
+			<div class="input-group">
+				<input type="text" name="name" class="form-control" formControlName="name" />
+			</div>
+      <div class="alert alert-danger" *ngIf="createUserForm.controls.name?.invalid && createUserForm.controls.name?.touched">
+        <p *ngIf="createUserForm.controls.name?.errors.required">a name is required</p>
+        <p *ngIf="createUserForm.controls.name?.errors.maxlength"> the name field is too long</p>
+      </div>
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email</label>
+			<div class="input-group">
+					<input type="email" name="email" class="form-control" formControlName="email" />
+			</div>
+        <div class="alert alert-danger" *ngIf="createUserForm.controls.email?.invalid && createUserForm.controls.email?.touched">
+        <p *ngIf="createUserForm.controls.email?.errors.required">A email is required</p>
+        <p *ngIf="createUserForm.controls.email?.errors.maxlength"> the email field is too long</p>
+         <p *ngIf="createUserForm.controls.email?.errors.email"> the email provided is invalid</p>
+      </div>
+		</div>
+	
+  	<div class="form-group">
+			<label for="phone">Phone</label>
+			<div class="input-group">
+					<input type="text" name="phone" class="form-control" formControlName="phone" />
+			</div>
+        <div class="alert alert-danger" *ngIf="createUserForm.controls.phone?.invalid && createUserForm.controls.phone?.touched">
+        <p *ngIf="createUserForm.controls.phone?.errors.required"> phone number is required</p>
+        <p *ngIf="createUserForm.controls.phone?.errors.maxlength"> the phone number provided is too long</p>
+      </div>	
+		</div>
+
+    <div class="form-group">
+			<label for="username">Username</label>
+			<div class="input-group">
+				<input type="text" name="username" class="form-control" formControlName="username" />
+		  </div>
+        <div class="alert alert-danger" *ngIf="createUserForm.controls.username?.invalid && createUserForm.controls.username?.touched">
+        <p *ngIf="createUserForm.controls.username?.errors.required">a username is required</p>
+        <p *ngIf="createUserForm.controls.username?.errors.maxlength"> the username provided is too long</p>
+      </div>
+    </div>
+
+      <div class="form-group">
+			  <label for="website">Website</label>
+			  <div class="input-group">
+				  <input type="text" name="website" class="form-control" formControlName="website" />
+			  </div>
+          <div class="alert alert-danger" *ngIf="createUserForm.controls.website?.invalid && createUserForm.controls.website?.touched">
+        <p *ngIf="createUserForm.controls.website?.errors.required">A website is a required</p>
+        <p *ngIf="createUserForm.controls.website?.errors.maxlength"> is too long</p>
+      </div>
+      </div>
+
+      <button [disabled]="createUserForm.invalid" type="submit" class="btn btn-info btn-lg">Submit</button>
+  </form>
+</div>
