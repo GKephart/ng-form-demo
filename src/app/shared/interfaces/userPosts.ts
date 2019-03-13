@@ -1,5 +1,5 @@
- import {User} from "./user.ts";
- import {Post} from "./post.ts"
+ import {User} from "./user";
+ import {Post} from "./post"
     
  export interface UserPosts {
  	user: User

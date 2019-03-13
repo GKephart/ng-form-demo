@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from "@angular/core";
 import {User} from "../../shared/interfaces/user";
-import {Status} from "../../shared/interfaces/Status";
+import {Status} from "../../shared/interfaces/status";
 import {ApiService} from "../../shared/services/api.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";

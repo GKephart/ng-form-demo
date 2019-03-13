@@ -1,7 +1,7 @@
 {
-  "/api/*": {
-    "target": ,
+  "/api": {
+    "target":"https://bootcamp-coders.cnm.edu/~gkephart/ng-demo7-backend/public_html/" ,
     "secure": false,
-    "pathRewrite": {"^/api" : ""}
+    "changeOrigin":"true"
   }
 }

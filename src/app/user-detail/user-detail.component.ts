@@ -3,6 +3,7 @@ import {User} from "../shared/interfaces/user";
 import {Post} from "../shared/interfaces/post";
 import {ApiService} from "../shared/services/api.service";
 import {ActivatedRoute} from "@angular/router";
+import {UserPosts} from "../shared/interfaces/userPosts";
 
 @Component({
 	templateUrl: "./user-detail.component.html",
@@ -12,7 +13,7 @@ import {ActivatedRoute} from "@angular/router";
 
   export class UserDetailComponent implements OnInit{
 	posts: Post[] = [];
-  user: User = {userId:null,email:null,name:null,phone:null,username:null,website:null};
+	user: User = {userId:null,email:null,name:null,phone:null,username:null,website:null};
 
 
 
@@ -26,8 +27,8 @@ import {ActivatedRoute} from "@angular/router";
 
     getDetailedUser(userId : string) : void {
       this.apiService.getDetailedUser(userId).subscribe(reply => {
-        this.user = reply.user;
-        this.posts = reply.posts;
+      	reply.user = this.user;
+      	reply.posts = this.posts;
       })
     }
 

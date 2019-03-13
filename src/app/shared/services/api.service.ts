@@ -13,7 +13,7 @@ export class ApiService {
 	constructor(protected http : HttpClient ) {}
 
 	//define the API endpoint
-	private apiUrl = "https://bootcamp-coders.cnm.edu/~gkephart/ng-demo7-backend/public_html/api/";
+	private apiUrl = "/api/";
 
 	
 	// call to the tweet API and create the tweet in question
@@ -28,14 +28,14 @@ export class ApiService {
 	}
 
 	// call to the API and get an array of tweets based off the profileId
-	getDetailedUser(userId : string) : Observable<UserPosts[]> {
-		return(this.http.get<UserPosts[]>(this.apiUrl + "?postUserId=" + userId ));
+	getDetailedUser(userId : string) : Observable<UserPosts> {
+		return(this.http.get<UserPosts>(this.apiUrl + "?postUserId=" + userId ));
 
 	}
 
   //call to the API and get an array of all the tweets in the database
-	getAllUsers() : Observable<User> {
-		return(this.http.get<User>(this.apiUrl));
+	getAllUsers() : Observable<User[]> {
+		return(this.http.get<User[]>(this.apiUrl));
 
 	}
 
