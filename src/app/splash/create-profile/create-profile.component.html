@@ -1,9 +1,10 @@
   <div class="container">
+	  {{createUserForm | json}}
       <form name="createUserForm" class="form-horizontal well" [formGroup]="createUserForm" (submit)="createProfile()" novalidate>
 
   	<h2>Create User</h2>
 		<div class="form-group">
-			<label for="name">Name</label>
+			<label>Name</label>
 			<div class="input-group">
 				<input type="text" name="name" class="form-control" formControlName="name" />
 			</div>
@@ -14,7 +15,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="email">Email</label>
+			<label>Email</label>
 			<div class="input-group">
 					<input type="email" name="email" class="form-control" formControlName="email" />
 			</div>
@@ -60,4 +61,9 @@
 
       <button [disabled]="createUserForm.invalid" type="submit" class="btn btn-info btn-lg">Submit</button>
   </form>
+	  <div *ngIf="status !== null" class="alert alert-dismissible" [ngClass]="status.type" role="alert">
+		  <button type="button" class="close" aria-label="Close" (click)="status = null;"><span
+			  aria-hidden="true">&times;</span></button>
+		  {{ status.message }}
+	  </div>
 </div>
