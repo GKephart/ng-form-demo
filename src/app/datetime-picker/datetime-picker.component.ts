@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 	templateUrl: "datetime-picker.component.html"
 })
 
-export class DatetimePickerComponent implements OnInit{
+export class DatetimePickerComponent implements OnInit {
 
 	dateTimePickerForm: FormGroup = null;
 
@@ -15,15 +15,15 @@ export class DatetimePickerComponent implements OnInit{
 
 	ngOnInit(): void {
 		this.dateTimePickerForm = this.formBuilder.group({
-			date: ["" ,[Validators.required]],
+			date: ["", [Validators.required]],
 			time: ["", [Validators.required]]
 		})
 	}
 
 	submit() {
 		//do javaascript things
-		let date =this.dateTimePickerForm.value.date;
-		let time = 	this.dateTimePickerForm.value.time;
+		let date = this.dateTimePickerForm.value.date;
+		let time = this.dateTimePickerForm.value.time;
 		let startTime = new Date(date.year, date.month, date.day, time.hour, time.minute);
 		console.log(startTime.getTime());
 	}
