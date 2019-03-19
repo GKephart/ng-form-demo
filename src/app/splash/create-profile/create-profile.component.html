@@ -54,7 +54,7 @@
 				  <input type="text" name="website" class="form-control" formControlName="website" />
 			  </div>
           <div class="alert alert-danger" *ngIf="createUserForm.controls.website?.invalid && createUserForm.controls.website?.touched">
-        <p *ngIf="createUserForm.controls.website?.errors.required">A website is a required</p>
+        <p *ngIf="createUserForm.controls?.website.errors.required">A website is a required</p>
         <p *ngIf="createUserForm.controls.website?.errors.maxlength"> is too long</p>
       </div>
       </div>
